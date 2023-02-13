@@ -19,5 +19,8 @@ async def on_message(message):
                     if attachment.url.endswith(("png", "jpg", "jpeg")):
                         file.writelines(f"<nav><h1>{message.author.name}<span>{message.created_at}</span></h1><p>{message.content}</p><img src={attachment.url}><nav>\n")
                         file.close()
+                if not message.attachments:
+                    file.writelines(f"<nav><h1>{message.author.name}<span>{message.created_at}</span></h1><p>{message.content}</p><nav>\n")
+                    file.close()
 
 bot.run(Token)
