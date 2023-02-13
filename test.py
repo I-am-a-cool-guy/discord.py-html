@@ -7,13 +7,10 @@ bot.remove_command("help")
 
 @bot.event
 async def on_message(message):
-    if message.author.bot:
-        return
-    else:
-        if message.guild:
-            CHANNEL_NAME = "聞き専","雑談"
-            if message.channel.name in CHANNEL_NAME:
-                print(f"{message.author.name} | {message.content}  ----{message.guild.name}メンバー数({message.guild.member_count})")
+    if message.guild:
+        CHANNEL_NAME = "聞き専","雑談"
+        if message.channel.name in CHANNEL_NAME:
+            print(f"{message.author.name} | {message.content}  ----{message.guild.name}メンバー数({message.guild.member_count})")
                 file = open('index.html', 'a', encoding='UTF-8')
                 for attachment in message.attachments:
                     if attachment.url.endswith(("png", "jpg", "jpeg")):
