@@ -14,10 +14,10 @@ async def on_message(message):
                 file = open('index.html', 'a', encoding='UTF-8')
                 for attachment in message.attachments:
                     if attachment.url.endswith(("png", "jpg", "jpeg")):
-                        file.writelines(f"<nav><div><img src={message.author.display_avatar}></div><h1>{message.author.name}<span>{message.created_at}</span></h1><p>{message.content}</p><strong><img src={attachment.url}></strong><nav>\n")
+                        file.writelines(f"<nav><div><img src={message.author.display_avatar}></div><h1>{message.author.name}<span>{message.created_at}</span></h1><p>{message.content}</p><strong><img src={attachment.url}></strong></nav>\n")
                         file.close()
                 if not message.attachments:
-                    file.writelines(f"<nav><div><img src={message.author.display_avatar}></div><h1>{message.author.name}<span>{message.created_at}</span></h1><p>{message.content}</p><nav>\n")
+                    file.writelines(f"<nav><div><img src={message.author.display_avatar}></div><h1>{message.author.name}<span>{message.created_at}</span></h1><p>{message.content}</p></nav>\n")
                     file.close()
 
 
