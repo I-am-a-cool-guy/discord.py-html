@@ -187,7 +187,7 @@ body {
     background: rgb(39, 39, 44);
 }
 .Main-contents {
-    width: 100%;
+    width: 1px;
     position: fixed;
 }
 .box {
